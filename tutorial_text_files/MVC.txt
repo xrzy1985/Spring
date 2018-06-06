@@ -1,0 +1,17 @@
+MVC is a way to separate an application into three distinct parts
+  Model
+    the data access
+
+  View
+    the front end
+    what the user sees
+
+  Control
+    will connect the Model and View
+    together to yield the desired
+    product
+
+Dependency Injection
+  
+
+Maven
