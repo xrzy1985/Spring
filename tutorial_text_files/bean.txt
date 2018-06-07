@@ -1,0 +1,121 @@
+What is a Bean?
+
+  beans are important in Spring, because it is what is used with the IoC Container
+
+  a java class that should follow specific conventions
+
+    1. It should have a no-arg constructor
+          - method with no arguments
+
+    2. It should be serialized
+          - it should implement Serializable
+
+    3. It should provide getters/setters for properties
+          - it should implement the get/set methods
+
+IoC Container
+
+  The Spring container is the absolute core of the Spring application.
+  The container creates objects, connects the objects, configures the
+    objects, and manages their lifecycle through destruction.
+  The container uses Spring beans, dependency injection, to manage the
+    components of the application.
+
+    /* EXAMPLE of an IoC Container, the core of your application
+
+    public class ApplicationStart
+    {
+        public static void main(String[] args)
+        {
+            ApplicationContext applicationContext = new ClassPathXmlApplicationContext("Beans.xml");
+        }
+    }
+    */
+
+                                                            _________________
+    [ Meta Data (xml, java code, or java annotations)] --> |                 |
+                                                           | Spring Container| --> Read to use Application
+    [ Java POJO Classes (bean classes)] -->                |                 |
+
+      Meta Data would be the bean (Point, Hello) and the POJO class would be the actual Point10 and HelloWorld java classes
+
+  There are two types of containers; Spring BeanFactory and ApplicationContext
+
+      BeanFactory containers
+          should be used for light weight applications
+          when you need to consider volume and speed
+          mobile devices
+          applet based applications
+
+
+
+  Class
+    this specific attribute is a necessity
+    this class specifies the bean class to be used to create the bean
+
+    <bean class="classLocation">
+
+  Name
+    this attribute specifies the bean identifier uniquely in an XML based
+      configuration of metadata.
+    use the id/name attributes to specify the bean identifiers
+
+    <bean id="myBeanName">
+
+ Constructors
+    constructors are automatically called once the bean is created
+
+    /* EXAMPLE
+
+    ====JAVA CLASSES==============================
+
+      public class myClass
+      {
+        public myClass()
+        {
+          System.out.println("Called Constructor");
+        }
+        public void printHello()
+        {
+          System.out.println("Hello World");
+        }
+      }
+
+      ====XML======================================
+
+      <!-- DEF for Beans.xml bean -->
+      <bean id="myClass" class="myPackage.myClass"></bean>
+
+    */
+
+  Passubg Values to Constructors
+    Spring will cast the values accordingly
+    Assign the values to the correct data types in the constructors
+
+    <constructor-arg value="actualValue"/>
+
+    /* EXAMPLE
+
+    ====JAVA CLASSES==============================
+
+      public class myClass
+      {
+        public myClass(String message, int number)
+        {
+          System.out.println("message+",  "+number");
+        }
+        public void printHello()
+        {
+          System.out.println("Hello World");
+        }
+      }
+
+      ====XML======================================
+
+      <!-- DEF for Beans.xml bean -->
+      <bean id="myClass" class="myPackage.myClass">
+          <constructor-arg value=": Hello World, this is James."/>
+          <constructor-arg value="01234"/>
+      </bean>
+
+    */

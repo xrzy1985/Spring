@@ -14,6 +14,8 @@ MVC is a way to separate an application into three distinct parts
 Dependency Injection
   to inject dependencies
   OneClass ---uses---> AnotherClass
+  (IoC) Inversion of Control :
+    
 
 
 new -> Maven Project -> group, artifact
