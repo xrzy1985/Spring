@@ -14,7 +14,7 @@ What is a Bean?
           - it should implement the get/set methods
 
 IoC Container
-
+===================================================================================
   The Spring container is the absolute core of the Spring application.
   The container creates objects, connects the objects, configures the
     objects, and manages their lifecycle through destruction.
@@ -47,7 +47,7 @@ IoC Container
           mobile devices
           applet based applications
 
-
+===================================================================================
 
   Class
     this specific attribute is a necessity
@@ -88,6 +88,8 @@ IoC Container
 
     */
 
+===================================================================================
+
   Passing Values to Constructors
     Spring will cast the values accordingly
     Assign the values to the correct data types in the constructors
@@ -120,6 +122,7 @@ IoC Container
 
     */
 
+===================================================================================
 
   Specifying Constructor Variable types
 
@@ -154,3 +157,38 @@ IoC Container
       </bean>
 
     */
+===================================================================================
+Specifying the Constructor Variable Order
+    which is a good programming habit
+    this habit will ensure that you are passing in
+      exactly what you wish to pass in
+
+      /* EXAMPLE
+
+      ====JAVA CLASSES==============================
+
+        public class myClass
+        {
+          public myClass(float x, double y)
+          {
+            System.out.println(x + " , " + y);
+          }
+        }
+
+        ====XML======================================
+
+        <!-- DEF for Beans.xml bean -->
+        <bean id="myClass" class="myPackage.myClass">
+            <constructor-arg index="1" value="12.7"/>
+            <constructor-arg index="0" value="200.2"/>
+        </bean>
+
+      */
+
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================

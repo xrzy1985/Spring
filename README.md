@@ -11,4 +11,5 @@ Do so, please.
 # Structure
 	1. helloWorld
 	2. constructorsWithArguments
-	3. 
+	3. specifyingVariablesInConstructors
+	4. specifyingVariablesByIndexInConstructors
