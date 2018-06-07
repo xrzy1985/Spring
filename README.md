@@ -13,3 +13,4 @@ Do so, please.
 	2. constructorsWithArguments
 	3. specifyingVariablesInConstructors
 	4. specifyingVariablesByIndexInConstructors
+	5. methodsWithVariables
