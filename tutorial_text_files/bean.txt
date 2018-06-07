@@ -88,7 +88,7 @@ IoC Container
 
     */
 
-  Passubg Values to Constructors
+  Passing Values to Constructors
     Spring will cast the values accordingly
     Assign the values to the correct data types in the constructors
 
@@ -102,7 +102,7 @@ IoC Container
       {
         public myClass(String message, int number)
         {
-          System.out.println("message+",  "+number");
+          System.out.println(message + ",  " + number);
         }
         public void printHello()
         {
@@ -116,6 +116,41 @@ IoC Container
       <bean id="myClass" class="myPackage.myClass">
           <constructor-arg value=": Hello World, this is James."/>
           <constructor-arg value="01234"/>
+      </bean>
+
+    */
+
+
+  Specifying Constructor Variable types
+
+    You should get into the habit of programming the data type into Spring.
+    Spring should automatically choose, but the best choice is to be careful.
+    Plus, your code should be optimized at all times.
+
+    <constructor-arg type="dataType" value="actualValue"/>
+
+    /* EXAMPLE
+
+    ====JAVA CLASSES==============================
+
+      public class myClass
+      {
+        public myClass(float x, double y)
+        {
+          System.out.println(x + " , " + y);
+        }
+        public void printHello()
+        {
+          System.out.println("Hello World");
+        }
+      }
+
+      ====XML======================================
+
+      <!-- DEF for Beans.xml bean -->
+      <bean id="myClass" class="myPackage.myClass">
+          <constructor-arg type="float" value="12.7"/>
+          <constructor-arg type="double" value="200.2"/>
       </bean>
 
     */
