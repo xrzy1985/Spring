@@ -12,6 +12,10 @@ MVC is a way to separate an application into three distinct parts
     product
 
 Dependency Injection
-  
+  to inject dependencies
+  OneClass ---uses---> AnotherClass
 
-Maven
+
+new -> Maven Project -> group, artifact
+
+Ensure that all xml files are inside of the java folder
